@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "db": "ts-node ./prisma/prisma.ts",
+    "db:find": "ts-node ./prisma/prisma.ts",
+    "db:seed": "ts-node ./prisma/seed.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +13,9 @@
   "dependencies": {
     "@prisma/client": "^4.1.0",
     "@supabase/supabase-js": "^1.35.4",
+    "install": "^0.13.0",
     "next": "12.2.3",
+    "npm": "^8.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
