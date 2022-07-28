@@ -6,7 +6,7 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
       <Header />
-      <main className="px-2 sm:px-8">{children}</main>
+      <main className="px-6 sm:px-8">{children}</main>
       <Footer />
     </div>
   )

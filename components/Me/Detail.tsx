@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 function Detail() {
   return (
     <div className="max-w-2xl mx-auto pb-16">
@@ -14,7 +16,17 @@ function Detail() {
             Next, Nuxt, Node, Git 다양한 스킬 바탕으로 웹 개발을 하고 있습니다.
           </p>
         </div>
-        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto"></div>
+        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
+          <Image
+            alt="Lee Robinson"
+            height={176}
+            width={176}
+            src="/avatar.png"
+            sizes="30vw"
+            priority
+            className="rounded-full"
+          />
+        </div>
       </div>
     </div>
   )
