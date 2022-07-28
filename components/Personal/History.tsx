@@ -56,7 +56,6 @@ function ShowAll({ setState }: { setState: (is: boolean) => void }) {
 
 export default function History({ data }: { data: PersonalHistory[] }) {
   const [isShowAll, setisShowAll] = useState<boolean>(false)
-  console.log(isShowAll)
 
   return (
     <div className="history-root">

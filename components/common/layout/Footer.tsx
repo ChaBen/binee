@@ -18,7 +18,7 @@ const Footer = () => {
           <a
             className="inline-flex items-center text-gray-500 hover:text-gray-600 transition"
             target="_blank"
-            rel="github"
+            rel="noopener noreferrer"
             href="https://github.com/ChaBen"
           >
             Github
@@ -26,7 +26,7 @@ const Footer = () => {
           <a
             className="inline-flex items-center text-gray-500 hover:text-gray-600 transition"
             target="_blank"
-            rel="kmong"
+            rel="noopener noreferrer"
             href="https://kmong.com/gig/358946"
           >
             Kmong
