@@ -1,4 +1,5 @@
 import Layout from '@/components/common/layout'
+import Detail from '@/components/Me/Detail'
 import History from '@/components/Personal/History'
 import { supabase } from '@/lib/supabaseClient'
 import { PersonalHistory } from '@/types/PersonalHistory'
@@ -10,9 +11,8 @@ export default function Index({
 }) {
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto">
-        <History data={personalHistory} />
-      </div>
+      <Detail />
+      <History data={personalHistory} />
     </Layout>
   )
 }
