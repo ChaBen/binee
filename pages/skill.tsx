@@ -148,13 +148,13 @@ export default function Skill() {
       <div className="title">Frontend</div>
       <div className="mr-10 mt-6">
         {frontend.map((item) => (
-          <SkillItem data={item}></SkillItem>
+          <SkillItem data={item} key={item.key}></SkillItem>
         ))}
       </div>
       <div className="title mt-12">Backend</div>
       <div className="mr-10 mt-6">
         {backend.map((item) => (
-          <SkillItem data={item}></SkillItem>
+          <SkillItem data={item} key={item.key}></SkillItem>
         ))}
       </div>
       {/* <div className="relative h-2 bg-gradient-to-r from-blue-300 to-blue-500 w-full rounded-full mt-10 after:absolute after:right-0 after:h-2 after:left-[70%] after:bg-gray-900 after:rounded-full">
