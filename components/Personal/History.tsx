@@ -1,5 +1,5 @@
 import { PersonalHistory } from '@/types/PersonalHistory'
-import { cn } from '@/lib/classname'
+import { cn } from '@/utility/classname'
 import { useState } from 'react'
 
 function ListItem({ item }: { item: PersonalHistory }) {

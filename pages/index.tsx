@@ -2,7 +2,7 @@ import Layout from '@/components/common/layout'
 import Detail from '@/components/Me/Detail'
 import History from '@/components/Personal/History'
 import Portfolio from '@/components/Portfolio'
-import { supabase } from '@/lib/supabaseClient'
+import { LoadHistory } from '@/lib/loadHistory'
 import { PersonalHistory } from '@/types/PersonalHistory'
 
 export default function Index({
@@ -19,13 +19,8 @@ export default function Index({
   )
 }
 
-export async function getServerSideProps() {
-  const { data: personalHistory } = await supabase
-    .from<PersonalHistory>('PersonalHistory')
-    .select('*')
-    .order('startDate', {
-      ascending: false,
-    })
+export async function getStaticProps() {
+  const personalHistory = await LoadHistory()
 
   return {
     props: {
