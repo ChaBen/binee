@@ -6,6 +6,9 @@
   .link {
     @apply text-gray-500 hover:text-gray-600 transition;
   }
+  .title {
+    @apply font-bold text-2xl md:text-4xl tracking-tight text-black dark:text-white mr-auto;
+  }
 
   .nav {
     @apply max-w-2xl mx-auto flex gap-x-4 items-center w-full relative border-gray-200 dark:border-gray-700 pt-8 pb-8 sm:pb-16 text-gray-900 dark:text-gray-100;
@@ -17,33 +20,42 @@
     }
   }
 
-  .history-root {
-    @apply max-w-2xl mx-auto mb-10;
-    .history {
-      @apply p-1 sm:px-1 sm:mx-auto relative;
-      &.mask {
-        -webkit-mask-image: -webkit-gradient(
-          linear,
-          left 70%,
-          left bottom,
-          from(rgba(0, 0, 0, 1)),
-          to(rgba(0, 0, 0, 0))
-        );
-      }
-      &::-webkit-scrollbar {
-        @apply w-3;
-      }
-      &::-webkit-scrollbar-track {
-        @apply bg-transparent;
-      }
+  .history {
+    @apply p-1 sm:px-1 sm:mx-auto relative;
+    &.mask {
+      -webkit-mask-image: -webkit-gradient(
+        linear,
+        left 70%,
+        left bottom,
+        from(rgba(0, 0, 0, 1)),
+        to(rgba(0, 0, 0, 0))
+      );
+    }
+    &::-webkit-scrollbar {
+      @apply w-3;
+    }
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply opacity-0 bg-gray-800 border-4 border-solid dark:border-gray-900 rounded-[20px] transition-opacity;
+    }
+    &:hover {
       &::-webkit-scrollbar-thumb {
-        @apply opacity-0 bg-gray-800 border-4 border-solid dark:border-gray-900 rounded-[20px] transition-opacity;
-      }
-      &:hover {
-        &::-webkit-scrollbar-thumb {
-          @apply opacity-100;
-        }
+        @apply opacity-100;
       }
     }
   }
+}
+.Frontend-bar {
+  @apply bg-gradient-to-r from-green-300 to-green-500;
+}
+.Frontend-val {
+  @apply group-hover:text-green-500;
+}
+.Backend-bar {
+  @apply bg-gradient-to-r from-blue-300 to-blue-500;
+}
+.Backend-val {
+  @apply group-hover:text-blue-500;
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="w-full max-w-2xl mx-auto flex flex-col justify-center items-start">
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8"></hr>
@@ -46,5 +46,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer

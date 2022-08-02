@@ -1,7 +1,9 @@
+import Head from 'next/head'
+import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
-const ToggleTheme = () => {
+export function ToggleTheme() {
   const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
 
@@ -43,26 +45,27 @@ const ToggleTheme = () => {
   )
 }
 
-const Header = () => {
+export default function Header() {
   return (
     <header className="px-8">
+      <Head>
+        <title>Binee – Developer</title>
+      </Head>
       <nav className="nav">
-        <a href="#" className="nav-link">
-          홈
-        </a>
-        <a href="#" className="nav-link">
-          소개
-        </a>
-        <a href="#" className="nav-link">
-          포토폴리오
-        </a>
-        <a href="#" className="nav-link">
-          스킬
-        </a>
+        <Link href="/">
+          <a className="nav-link">홈</a>
+        </Link>
+        <Link href="/">
+          <a className="nav-link">소개</a>
+        </Link>
+        <Link href="/portfolio">
+          <a className="nav-link">포트폴리오</a>
+        </Link>
+        <Link href="/skill">
+          <a className="nav-link">스킬</a>
+        </Link>
         <ToggleTheme />
       </nav>
     </header>
   )
 }
-
-export default Header

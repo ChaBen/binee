@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 function Detail() {
   return (
-    <div className="max-w-2xl mx-auto pb-16">
+    <div className="max-w-2xl mx-auto">
       <div className="flex flex-col-reverse sm:flex-row items-start">
         <div className="flex flex-col pr-8">
           <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
@@ -18,10 +18,10 @@ function Detail() {
         </div>
         <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
           <Image
-            alt="Lee Robinson"
+            alt="Binee"
             height={176}
             width={176}
-            src="/avatar.png"
+            src="/static/images/avatar.png"
             sizes="30vw"
             priority
             className="rounded-full"
