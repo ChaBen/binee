@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 export function ToggleTheme() {
   const [mounted, setMounted] = useState(false)
@@ -46,6 +47,8 @@ export function ToggleTheme() {
 }
 
 export default function Header() {
+  const router = useRouter()
+
   return (
     <header className="px-8">
       <Head>
@@ -53,16 +56,38 @@ export default function Header() {
       </Head>
       <nav className="nav">
         <Link href="/">
-          <a className="nav-link">홈</a>
+          <a
+            className={router.pathname == '/' ? 'nav-link active' : 'nav-link'}
+          >
+            홈
+          </a>
         </Link>
-        <Link href="/">
-          <a className="nav-link">소개</a>
+        <Link href="/about">
+          <a
+            className={
+              router.pathname == '/about' ? 'nav-link active' : 'nav-link'
+            }
+          >
+            소개
+          </a>
         </Link>
         <Link href="/portfolio">
-          <a className="nav-link">포트폴리오</a>
+          <a
+            className={
+              router.pathname == '/portfolio' ? 'nav-link active' : 'nav-link'
+            }
+          >
+            포트폴리오
+          </a>
         </Link>
         <Link href="/skill">
-          <a className="nav-link">스킬</a>
+          <a
+            className={
+              router.pathname == '/skill' ? 'nav-link active' : 'nav-link'
+            }
+          >
+            스킬
+          </a>
         </Link>
         <ToggleTheme />
       </nav>

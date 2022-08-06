@@ -2,6 +2,10 @@ import { PersonalHistory } from '@/types/PersonalHistory'
 import { cn } from '@/utility/classname'
 import { useState } from 'react'
 
+interface Props {
+  data: PersonalHistory[]
+}
+
 function ListItem({ item }: { item: PersonalHistory }) {
   return (
     <li className="ml-4">
@@ -54,21 +58,19 @@ function ShowAll({ setState }: { setState: (is: boolean) => void }) {
   )
 }
 
-export default function History({ data }: { data: PersonalHistory[] }) {
+export default function History({ data }: Props) {
   const [isShowAll, setisShowAll] = useState<boolean>(false)
 
   return (
-    <div className="history-root">
+    <div className="mt-14">
       <div
         className={cn(
           'history',
           !isShowAll ? 'h-[520px] overflow-hidden mask' : ''
         )}
       >
-        <div className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
-          이력
-        </div>
-        <ol className="flex flex-col gap-y-10 relative border-l border-gray-200 dark:border-gray-700">
+        <div className="title">이력</div>
+        <ol className="flex flex-col gap-y-10 relative border-l border-gray-200 dark:border-gray-700 mt-6">
           {data.map((item: any) => (
             <ListItem key={item.id} item={item} />
           ))}
