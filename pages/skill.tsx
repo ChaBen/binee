@@ -61,7 +61,7 @@ const frontend: ItemProps[] = [
     key: '9',
     type: 'Frontend',
     name: 'Svelte',
-    proficiency: 70,
+    proficiency: 40,
   },
 ]
 const backend: ItemProps[] = [

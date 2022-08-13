@@ -4,13 +4,13 @@ import Link from 'next/link'
 
 export function PortfolioList() {
   return (
-    <div className="grid gap-2 grid-cols-1 sm:grid-cols-2">
+    <div className="grid gap-2 grid-cols-1 sm:grid-cols-3">
       <div className="max-w-sm">
         <div>
           <Image
             alt="makers"
-            height={576}
-            width={384}
+            width={220}
+            height={330}
             sizes="50vw"
             src="/static/images/makers.jpeg"
             priority
@@ -25,8 +25,8 @@ export function PortfolioList() {
         <div>
           <Image
             alt="makers"
-            height={576}
-            width={384}
+            width={220}
+            height={330}
             sizes="50vw"
             src="/static/images/makers.jpeg"
             priority
@@ -61,7 +61,7 @@ export default function Portfolio({ all }: { all?: boolean }) {
   return (
     <div className="mb-16">
       <div className="flex items-center mb-6">
-        <div className="title">추천 게시물</div>
+        <div className="title">포트폴리오</div>
         {all && (
           <Link href="/portfolio">
             <a className=" text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">

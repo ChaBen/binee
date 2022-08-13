@@ -1,26 +1,31 @@
-import { PersonalHistory } from '@/types/PersonalHistory'
 import { cn } from '@/utility/classname'
 import { useState } from 'react'
+import { loadHistory } from '@/lib/loadHistory'
 
-interface Props {
-  data: PersonalHistory[]
+interface PersonalHistory {
+  id: string
+  title: string
+  description: string
+  startDate: string
+  endDate: string
+  tags: string[]
 }
 
-function ListItem({ item }: { item: PersonalHistory }) {
+function ListItem({ data }: { data: PersonalHistory }) {
   return (
     <li className="ml-4">
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-        {item.startDate} ~ {item.endDate}
+        {data.startDate} ~ {data.endDate}
       </time>
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-        {item.title}
+        {data.title}
       </h3>
       <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-        {item.description}
+        {data.description}
       </p>
       <div className="flex items-center flex-wrap gap-2">
-        {item.tags.map((tag, key) => (
+        {data.tags.map((tag, key) => (
           <span
             key={key}
             className="bg-gray-400 text-white text-xs font-medium inline-flex items-center px-2.5 py-1 rounded dark:bg-gray-700 dark:text-gray-300"
@@ -58,7 +63,7 @@ function ShowAll({ setState }: { setState: (is: boolean) => void }) {
   )
 }
 
-export default function History({ data }: Props) {
+export default function History() {
   const [isShowAll, setisShowAll] = useState<boolean>(false)
 
   return (
@@ -71,8 +76,8 @@ export default function History({ data }: Props) {
       >
         <div className="title">이력</div>
         <ol className="flex flex-col gap-y-10 relative border-l border-gray-200 dark:border-gray-700 mt-6">
-          {data.map((item: any) => (
-            <ListItem key={item.id} item={item} />
+          {loadHistory.map((item) => (
+            <ListItem key={item.id} data={item} />
           ))}
         </ol>
       </div>
