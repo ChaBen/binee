@@ -4,6 +4,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log(req.query.scret, process.env.REVALIDATE_SECRET)
+
   if (req.query.scret !== process.env.REVALIDATE_SECRET) {
     return res.status(401).json({ message: 'Invalid secret' })
   }
