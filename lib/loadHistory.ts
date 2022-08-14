@@ -1,8 +1,8 @@
 export const loadHistory = [
   {
     id: 'cl65ac6zh000028wgh48eyosm',
-    title: '湖北微果(중국)',
-    description: '고객센터 1:1 라이브 채팅, 영상, 음성 통화 시스템',
+    title: '花友直播(중국)',
+    description: '1:1 라이브 채팅, 영상, 음성 통화 시스템',
     startDate: '2020.01',
     endDate: '',
     tags: ['Nest', 'Prisma', 'React', 'Next', 'Antd', 'Tailwind'],

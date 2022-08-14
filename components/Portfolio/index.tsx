@@ -2,57 +2,42 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const PortfolioData = [
+  {
+    img: 'makers.jpeg',
+    title: '카카오 메이커스',
+  },
+  {
+    img: 'huayou.jpeg',
+    title: '花友直播',
+  },
+  {
+    img: 'nonghyup.jpeg',
+    title: '농협은행',
+  },
+]
+
 export function PortfolioList() {
   return (
     <div className="grid gap-2 grid-cols-1 sm:grid-cols-3">
-      <div className="max-w-sm">
-        <div>
-          <Image
-            alt="makers"
-            width={220}
-            height={330}
-            sizes="50vw"
-            src="/static/images/makers.jpeg"
-            priority
-            className="rounded-lg"
-          />
+      {PortfolioData.map((item, index) => (
+        <div className="max-w-sm">
+          <div>
+            <Image
+              alt={item.title}
+              width={220}
+              height={360}
+              sizes="50vw"
+              src={`/static/images/${item.img}`}
+              priority
+              className="rounded-lg"
+            />
+          </div>
+          <div className="font-bold text-sm md:text-base tracking-tight my-2 text-black dark:text-white">
+            {item.title}
+          </div>
         </div>
-        <div className="font-bold text-sm md:text-base tracking-tight my-2 text-black dark:text-white">
-          카카오 메이커스
-        </div>
-      </div>
-      <div className="max-w-sm">
-        <div>
-          <Image
-            alt="makers"
-            width={220}
-            height={330}
-            sizes="50vw"
-            src="/static/images/makers.jpeg"
-            priority
-            className="max-w-sm rounded-lg"
-          />
-        </div>
-        <div className="font-bold text-sm md:text-base tracking-tight my-2 text-black dark:text-white">
-          title
-        </div>
-      </div>
-      <div className="max-w-sm">
-        <div>
-          <Image
-            alt="makers"
-            height={576}
-            width={384}
-            sizes="50vw"
-            src="/static/images/makers.jpeg"
-            priority
-            className="max-w-sm rounded-lg"
-          />
-        </div>
-        <div className="font-bold text-sm md:text-base tracking-tight my-2 text-black dark:text-white">
-          title
-        </div>
-      </div>
+      ))}
     </div>
   )
 }

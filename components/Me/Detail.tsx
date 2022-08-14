@@ -11,7 +11,7 @@ function Detail() {
           <h2 className="text-lg text-gray-700 dark:text-gray-200 mb-4">
             퍼블리셔 & 프론트앤드 개발자(프리렌서)
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-16">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 mb-16">
             웹개발 12년차 HTML, CSS, JavaScript, TypeScript, Vite, React, Vue,
             Next, Nuxt, Node, Git 다양한 스킬 바탕으로 웹 개발을 하고 있습니다.
           </p>
