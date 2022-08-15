@@ -20,8 +20,8 @@ const PortfolioData = [
 export function PortfolioList() {
   return (
     <div className="grid gap-2 grid-cols-1 sm:grid-cols-3">
-      {PortfolioData.map((item, index) => (
-        <div className="max-w-sm">
+      {PortfolioData.map((item) => (
+        <div className="max-w-sm" key={item.img}>
           <div>
             <Image
               alt={item.title}
