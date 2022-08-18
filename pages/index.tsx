@@ -4,6 +4,8 @@ import History from '@/components/Personal/History'
 import Portfolio from '@/components/Portfolio'
 
 export default function Index() {
+  console.log(process.env.NEXT_PUBLIC_SUPABASE_URL)
+
   return (
     <Layout>
       <Detail />

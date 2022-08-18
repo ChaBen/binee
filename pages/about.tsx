@@ -38,6 +38,7 @@ export default function About() {
           태도
         </li>
         <li>매일 자신을 도전하고 번성하는 긍정적인 마음</li>
+        <li>새로운 것을 배우고 발전하고자 하는 열정</li>
         <li>프로다운 마인드</li>
       </ul>
       <div className="sub-title mt-6">취미</div>
