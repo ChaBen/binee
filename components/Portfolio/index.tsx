@@ -42,7 +42,7 @@ export function PortfolioList() {
               sizes="50vw"
               src={`/static/images/${item.img}`}
               priority
-              className="rounded-lg"
+              className="rounded-lg object-cover"
             />
           </div>
           <div className="font-bold text-sm md:text-base tracking-tight my-2 text-black dark:text-white">
