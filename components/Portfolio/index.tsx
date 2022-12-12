@@ -4,6 +4,18 @@ import Link from 'next/link'
 
 const PortfolioData = [
   {
+    img: 'ams-front.png',
+    title: 'AMS 모니터링시스템',
+  },
+  {
+    img: 'wecoop.jpg',
+    title: '위쿱',
+  },
+  {
+    img: 'bluelogo_600.jpg',
+    title: '탄소 상쇄 플랫폼',
+  },
+  {
     img: 'makers.jpeg',
     title: '카카오 메이커스',
   },
@@ -19,7 +31,7 @@ const PortfolioData = [
 
 export function PortfolioList() {
   return (
-    <div className="grid gap-2 grid-cols-1 sm:grid-cols-3">
+    <div className="grid gap-y-6 gap-x-3 grid-cols-1 sm:grid-cols-3">
       {PortfolioData.map((item) => (
         <div className="max-w-sm" key={item.img}>
           <div>

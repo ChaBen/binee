@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <Layout>
       <Detail />
-      <Portfolio all />
+      {/* <Portfolio all /> */}
       <History />
     </Layout>
   )

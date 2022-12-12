@@ -1,15 +1,7 @@
 import { cn } from '@/utility/classname'
 import { useState } from 'react'
-import { loadHistory } from '@/lib/loadHistory'
-
-interface PersonalHistory {
-  id: string
-  title: string
-  description: string
-  startDate: string
-  endDate: string
-  tags: string[]
-}
+import { loadHistory, PersonalHistory } from '@/lib/loadHistory'
+import Link from 'next/link'
 
 function ListItem({ data }: { data: PersonalHistory }) {
   return (
@@ -21,6 +13,13 @@ function ListItem({ data }: { data: PersonalHistory }) {
       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
         {data.title}
       </h3>
+      <p className="mb-4 mt-2">
+        {data.link && (
+          <a href={data.link} target="_blank" className="text-blue-500">
+            {data.link}
+          </a>
+        )}
+      </p>
       <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
         {data.description}
       </p>
@@ -37,6 +36,7 @@ function ListItem({ data }: { data: PersonalHistory }) {
     </li>
   )
 }
+
 function ShowAll({ setState }: { setState: (is: boolean) => void }) {
   return (
     <div className="text-center">
@@ -77,7 +77,7 @@ export default function History() {
         <div className="title">이력</div>
         <ol className="flex flex-col gap-y-10 relative border-l border-gray-200 dark:border-gray-700 mt-6">
           {loadHistory.map((item) => (
-            <ListItem key={item.id} data={item} />
+            <ListItem key={JSON.stringify(item)} data={item} />
           ))}
         </ol>
       </div>
