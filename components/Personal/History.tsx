@@ -15,7 +15,12 @@ function ListItem({ data }: { data: PersonalHistory }) {
       </h3>
       <p className="mb-4 mt-2">
         {data.link && (
-          <a href={data.link} target="_blank" className="text-blue-500">
+          <a
+            href={data.link}
+            target="_blank"
+            className="text-blue-500"
+            rel="noopener noreferrer"
+          >
             {data.link}
           </a>
         )}
